@@ -30,6 +30,8 @@ This is a GLSL compatible[^1] shader with some of Godot's preprocessor niceties.
 
 ## Passing a texture to the shader uniform
 
+Get a hold of your texture. Perhaps load it from file. Then, simply set it as the shader parameter `tex`:
+
 ```gdscript
 @onready var node: MeshInstance3D = $Cube
 
@@ -41,6 +43,8 @@ func set_texture(texture: Texture3D) -> void:
 	#var material: ShaderMaterial = node.get_surface_override_material(0)
 	material.set_shader_parameter(&"tex", texture)
 ```
+
+The texture is then, effectively, transferred from the CPU to the GPU and available to the shader as a `sampler3D` uniform (variable).
 
 ## Screenshots
 
