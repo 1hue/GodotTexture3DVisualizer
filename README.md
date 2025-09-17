@@ -13,7 +13,7 @@ The texture is ingested as a `sampler3D` uniform and is sampled for each fragmen
 For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
 
 > [!NOTE]\
-> **No AI slop**. No unnecessary/expensive matrix math or space reconstruction. Clean, minimal code.
+> **No AI slop**. No unnecessary and expensive matrix math or space reconstruction. Clean, minimal code.
 
 <br />
 
