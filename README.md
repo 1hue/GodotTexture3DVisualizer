@@ -36,7 +36,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 <br />
 
-## Passing a texture to the shader uniform
+## Passing a texture to the shader
 
 Get a hold of your texture. Perhaps load it from file. Then, simply set it as the shader parameter `tex`:
 
@@ -57,7 +57,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 <br />
 
 > [!TIP]
-> The texture's XYZ [will align](visualizer.gdshader#L63) with world XYZ. To rearrange the axes, we can use GLSL's component swizzling:
+> The texture's XYZ will align with world XYZ. To rearrange the axes and effectively flip it 90°, we [can use](visualizer.gdshader#L63) GLSL's component swizzling:
 >
 > ```glsl
 > // Instead of the default xyz:
@@ -70,9 +70,9 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 
 ## Compatibility
 
-Tested in:
+Tested using:
 
-- Vulkan
+- Vulkan API
 - Compatibility mode
 - Godot 4.5
 
