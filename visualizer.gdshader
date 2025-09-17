@@ -50,7 +50,7 @@ void vertex() {
 void fragment() {
 	vec3 model_uv = model / model_size + 0.5;
 
-	// For this fragment, the direction that we will raymarch towards
+	// For this fragment, the direction that we will raymarch is opposite of VIEW
 	vec4 ray_direction_world = INV_VIEW_MATRIX * vec4(-VIEW, 0.0); // View space -> world space
 	vec4 ray_direction_model = inverse(MODEL_MATRIX) * ray_direction_world; // World space -> model space
 	vec3 ray_direction = normalize(ray_direction_model.xyz);

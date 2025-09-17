@@ -70,7 +70,11 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 
 ## Compatibility
 
-Tested with Vulkan in Compatibility mode.
+Tested in:
+
+- Vulkan
+- Compatibility mode
+- Godot 4.5
 
 The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 
