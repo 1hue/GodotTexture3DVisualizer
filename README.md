@@ -78,24 +78,26 @@ The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 
 ## Screenshots
 
-### MeshInstance3D Material:
+### MeshInstance3D Material
 
 ![Screenshot of MeshInstance3D Material](/assets/mesh_instance_3d.png)
 
 ---
 
-### Shader parameters:
+### Shader parameters
 
 ![Screenshot of Shader Parameters](/assets/shader_parameters.png)
 
 ---
 
-### Shader parameters:
+### Compatibility mode
+
+Top right of editor:
 
 ![Screenshot of Compatibility and Forward+ rendering modes](/assets/compatibility_mode.png)
 
 ---
 
-### Noise texture:
+### Noise texture
 
 ![Screenshot of NoiseTexture3D](/assets/noise_texture_3d.png)
