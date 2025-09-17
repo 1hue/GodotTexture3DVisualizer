@@ -1,6 +1,8 @@
 shader_type spatial;
 render_mode unshaded, fog_disabled, shadows_disabled, blend_premul_alpha;
 
+const float EPSILON = 1e-6; // 6‑7 correct decimal places for 32-bit floats
+
 uniform sampler3D tex : hint_default_black, repeat_disable, filter_linear_mipmap;
 /** The size (m³) of the cube mesh. Must be set manually as shaders cannot possibly infer this. */
 uniform vec3 model_size = vec3(5, 5, 5);
@@ -8,8 +10,6 @@ uniform vec3 model_size = vec3(5, 5, 5);
 uniform int ray_steps : hint_range(0, 512, 1) = 64;
 
 varying vec3 model;
-
-const float EPSILON = 1e-6; // 6‑7 correct decimal places for 32-bit floats
 
 bool fEqual(in float a, in float b) {
   return abs(a - b) < EPSILON;
@@ -60,19 +60,19 @@ void fragment() {
 	vec3 ray_direction = normalize(ray_direction_model.xyz);
 
 	vec4 acc = vec4(0);
-	
+
 	for (int i = 0; i < ray_steps; i++) {
         // Step size goes [0, 0.1, .., 1]
         float step_size = float(i) / float(ray_steps - 1);
 		vec3 coord = model_uv + step_size * ray_direction;
-		
+
 		if (acc.a >= 1.0 || !isWithin(coord, 0.0, 1.0)) {
 			// Stop raymarching if fragment has accummulated full opacity or has gone beyond edge
 			break;
 		}
-		
+
 		vec4 sample = texture(tex, coord);
-		
+
 		// Accummulate this texel to the fragment only if it has actual visible colour
 		if (sample.a > 0.0) {
 			acc.rgb += sample.rgb * sample.a;
@@ -80,7 +80,7 @@ void fragment() {
 			acc.a = 1.0 - (1.0 - acc.a) * (1.0 - sample.a); // 0.75 for two 0.5 alphas
 		}
 	}
-	
+
     ALBEDO = acc.rgb;
 	ALPHA = acc.a;
 }
