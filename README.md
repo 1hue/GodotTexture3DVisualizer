@@ -2,15 +2,19 @@
 
 # Godot Texture3D Visualizer
 
-[`visualizer.gdshader`](visualizer.gdshader) takes a 3-dimensional texture and renders it in a specified size.
+Render and visualize 3-dimensional textures in their entirety in 3D space using spatial shaders.
 
-The texture could be loaded from file or a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU. It is provided to the shader as a `sampler3D` uniform.
+[`visualizer.gdshader`](visualizer.gdshader) raymarches through a texture and renders its 3D contents on the outside surfaces of a cube.
 
-For the purposes of demonstration we use a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html).
+The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
+
+For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
+
+The texture is ingested as a `sampler3D` uniform and is sampled for each fragment a number of times using raymarching. Maximum Ray Steps are customizable.
 
 ---
 
-This is a GLSL compatible[^1] shader with some of Godot's preprocessor niceties.
+This is a GLSL compatible[^1] shader with Godot's preprocessor niceties.
 
 [^1]: For actual differences of Godot Shading Language vs GLSL, check out [this page](https://docs.godotengine.org/en/stable/tutorials/shaders/converting_glsl_to_godot_shaders.html#doc-converting-glsl-to-godot-shaders).
 
