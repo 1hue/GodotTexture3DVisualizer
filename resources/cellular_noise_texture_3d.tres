@@ -1,13 +1,12 @@
 [gd_resource type="NoiseTexture3D" load_steps=3 format=3 uid="uid://ck8aoq1w5jbm5"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
-offsets = PackedFloat32Array(0.103896104, 0.15584415, 0.25974026)
+offsets = PackedFloat32Array(0, 0.1780822, 0.3561644)
 colors = PackedColorArray(0.007843138, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
 noise_type = 2
-seed = 2
-frequency = 0.0131
+frequency = 0.0122
 fractal_type = 0
 cellular_distance_function = 1
 cellular_return_type = 6

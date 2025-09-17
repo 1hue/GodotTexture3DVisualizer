@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://visualizer.gdshader" id="1_ig7tw"]
-[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://resources/noise_texture_3d.tres" id="2_0xm2m"]
+[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://resources/perlin_noise_texture_3d.tres" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_top_color = Color(0.043137256, 0.05882353, 0.07058824, 1)
@@ -18,15 +18,15 @@ background_mode = 2
 sky = SubResource("Sky_0xm2m")
 tonemap_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
 render_priority = 0
 shader = ExtResource("1_ig7tw")
-shader_parameter/tex = ExtResource("2_0xm2m")
+shader_parameter/tex = ExtResource("3_h2yge")
 shader_parameter/model_size = Vector3(5, 5, 5)
 shader_parameter/ray_steps = 128
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
-material = SubResource("ShaderMaterial_0xm2m")
+material = SubResource("ShaderMaterial_h2yge")
 size = Vector3(5, 5, 5)
 
 [node name="Main" type="Node3D"]
