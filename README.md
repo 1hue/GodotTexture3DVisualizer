@@ -58,9 +58,9 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 >
 > ```glsl
 > // Instead of the default xyz:
-> vec4 sample = texture(tex, coord);
+> vec3 coord = ...;
 > // we can xzy to make the texture's Z axis correspond to world Y:
-> vec4 sample = texture(tex, coord).xzy;
+> vec3 coord = (...).xzy;
 > ```
 
 <br />
