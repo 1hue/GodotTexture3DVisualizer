@@ -50,6 +50,16 @@ func set_texture(texture: Texture3D) -> void:
 
 The texture is then, effectively, transferred from the CPU to the GPU and available to the shader as a `sampler3D` uniform (variable).
 
+> [!NOTE]
+> The texture's XYZ will align with world XYZ. To flip the axes, we can use GLSL's component swizzling shorthand:
+>
+> ```glsl
+> // Instead of the default xyz:
+> vec4 sample = texture(tex, coord);
+> // we can xzy to make the texture's Z axis correspond to world Y:
+> vec4 sample = texture(tex, coord).xzy;
+> ```
+
 ## Screenshots
 
 ### MeshInstance3D Material:
