@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf5oxc0n30t8a"]
+
+[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://visualizer.gdshader" id="1_ig7tw"]
+[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://resources/noise_texture_3d.tres" id="2_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0.043137256, 0.05882353, 0.07058824, 1)
+sky_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
+ground_bottom_color = Color(0.0448, 0.060760003, 0.07, 1)
+ground_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+render_priority = 0
+shader = ExtResource("1_ig7tw")
+shader_parameter/tex = ExtResource("2_0xm2m")
+shader_parameter/model_size = Vector3(5, 5, 5)
+shader_parameter/ray_steps = 128
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+material = SubResource("ShaderMaterial_0xm2m")
+size = Vector3(5, 5, 5)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_h2yge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7dm0k")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.9020888, 0.4315505, 0, -0.4315505, 0.9020888, 0, 4.7670045, 9.937099)
