@@ -24,7 +24,7 @@ tonemap_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
 render_priority = 0
 shader = ExtResource("2_6bw2v")
-shader_parameter/wireframe = true
+shader_parameter/wireframe = false
 shader_parameter/wireframe_color = Color(0.076499976, 0.85, 0.5534918, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
