@@ -25,7 +25,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 3. Set the Material or Surface Material Override to a new `ShaderMaterial`.
 
-4. Set [`visualizer.gdshader`](visualizer.gdshader) as the material shader by dragging the file or using "Load"/"Quick Load".
+4. Set [`visualizer.gdshader`](visualizer.gdshader) as the material's shader by dragging the file or using "Load"/"Quick Load".
 
 5. Set your 3D texture as the "Tex" shader parameter.
 
