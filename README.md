@@ -31,6 +31,9 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 6. Ensure the "Model Size" shader parameter matches the box size.
 
+> [!TIP]
+> Note that the demo project is in Compatibility mode. Switch to Forward+ to avoid quirks.
+
 <br />
 
 ## Passing a texture to the shader uniform
@@ -69,7 +72,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 
 Tested with Vulkan in Compatibility mode.
 
-The wireframe (outline) used for the demo works in Mobile/Forward+ only.
+The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 
 <br />
 
@@ -77,16 +80,22 @@ The wireframe (outline) used for the demo works in Mobile/Forward+ only.
 
 ### MeshInstance3D Material:
 
-![Screenshots of MeshInstance3D Material](/assets/mesh_instance_3d.png)
+![Screenshot of MeshInstance3D Material](/assets/mesh_instance_3d.png)
 
 ---
 
 ### Shader parameters:
 
-![Screenshots of Shader Parameters](/assets/shader_parameters.png)
+![Screenshot of Shader Parameters](/assets/shader_parameters.png)
+
+---
+
+### Shader parameters:
+
+![Screenshot of Compatibility and Forward+ rendering modes](/assets/compatibility_mode.png)
 
 ---
 
 ### Noise texture:
 
-![Screenshots of NoiseTexture3D](/assets/noise_texture_3d.png)
+![Screenshot of NoiseTexture3D](/assets/noise_texture_3d.png)

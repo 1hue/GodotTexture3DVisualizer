@@ -19,10 +19,6 @@ bool fGreaterThan(in float a, in float b) {
   return (a - b) > EPSILON;
 }
 
-bvec3 fGreaterThan(in vec3 a, in float b) {
-  return bvec3(fGreaterThan(a.x, b), fGreaterThan(a.y, b), fGreaterThan(a.z, b));
-}
-
 bool fLessThan(in float a, in float b) {
   return (b - a) > EPSILON;
 }
@@ -71,7 +67,7 @@ void fragment() {
 			break;
 		}
 
-		vec4 sample = texture(tex, coord);
+		vec4 sample = texture(tex, coord).xzyw;
 
 		// Accummulate this texel to the fragment only if it has actual visible colour
 		if (sample.a > 0.0) {
