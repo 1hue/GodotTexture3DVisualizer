@@ -65,6 +65,14 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 
 <br />
 
+## Compatibility
+
+Tested with Vulkan in Compatibility mode.
+
+The wireframe (outline) used for the demo works in Mobile/Forward+ only.
+
+<br />
+
 ## Screenshots
 
 ### MeshInstance3D Material:
