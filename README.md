@@ -12,6 +12,8 @@ The texture is ingested as a `sampler3D` uniform and is sampled for each fragmen
 
 For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
 
+> [!NOTE] > **No AI slop**. Clean, minimal code.
+
 <br />
 
 ## Instructions
