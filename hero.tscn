@@ -7,14 +7,14 @@
 [ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://resources/cellular_noise_texture_3d.tres" id="5_6bw2v"]
 [ext_resource type="NoiseTexture3D" uid="uid://dg53ka43bxcp8" path="res://resources/simplex_noise_texture_3d.tres" id="6_kem5a"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
-sky_top_color = Color(0.043137256, 0.05882353, 0.07058824, 1)
-sky_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
-ground_bottom_color = Color(0.0448, 0.060760003, 0.07, 1)
-ground_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r1f3e"]
+sky_top_color = Color(0.050980393, 0.06666667, 0.09019608, 1)
+sky_horizon_color = Color(0.050980393, 0.06666667, 0.09019608, 1)
+ground_bottom_color = Color(0.050980393, 0.06666667, 0.09019608, 1)
+ground_horizon_color = Color(0.050980393, 0.06666667, 0.09019608, 1)
 
 [sub_resource type="Sky" id="Sky_0xm2m"]
-sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+sky_material = SubResource("ProceduralSkyMaterial_r1f3e")
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
@@ -24,7 +24,7 @@ tonemap_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
 render_priority = 0
 shader = ExtResource("2_6bw2v")
-shader_parameter/wireframe = false
+shader_parameter/wireframe = true
 shader_parameter/wireframe_color = Color(0.076499976, 0.85, 0.5534918, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
@@ -85,5 +85,5 @@ mesh = SubResource("BoxMesh_svejp")
 unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.7987196, 0.6017035, 0, -0.6017035, 0.7987196, 0, 7.9542, 11.484689)
+transform = Transform3D(1, 0, 0, 0, 0.89377874, 0.44850793, 0, -0.44850793, 0.89377874, 0, 5.681, 12.551)
 fov = 72.6
