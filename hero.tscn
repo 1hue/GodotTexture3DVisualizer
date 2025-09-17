@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=3 uid="uid://bh2lkuymxinm8"]
+
+[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://main.gd" id="1_c6xj6"]
+[ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://wireframe.gdshader" id="2_6bw2v"]
+[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://visualizer.gdshader" id="3_kem5a"]
+[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://resources/perlin_noise_texture_3d.tres" id="4_gxmxl"]
+[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://resources/cellular_noise_texture_3d.tres" id="5_6bw2v"]
+[ext_resource type="NoiseTexture3D" uid="uid://dg53ka43bxcp8" path="res://resources/simplex_noise_texture_3d.tres" id="6_kem5a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0.043137256, 0.05882353, 0.07058824, 1)
+sky_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
+ground_bottom_color = Color(0.0448, 0.060760003, 0.07, 1)
+ground_horizon_color = Color(0.11728484, 0.12519643, 0.1304476, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
+render_priority = 0
+shader = ExtResource("2_6bw2v")
+shader_parameter/wireframe = true
+shader_parameter/wireframe_color = Color(0.076499976, 0.85, 0.5534918, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
+render_priority = 0
+shader = ExtResource("3_kem5a")
+shader_parameter/tex = ExtResource("4_gxmxl")
+shader_parameter/model_size = Vector3(5, 5, 5)
+shader_parameter/ray_steps = 128
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+material = SubResource("ShaderMaterial_h2yge")
+size = Vector3(5, 5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kem5a"]
+render_priority = 0
+shader = ExtResource("3_kem5a")
+shader_parameter/tex = ExtResource("5_6bw2v")
+shader_parameter/model_size = Vector3(5, 5, 5)
+shader_parameter/ray_steps = 128
+
+[sub_resource type="BoxMesh" id="BoxMesh_gxmxl"]
+material = SubResource("ShaderMaterial_kem5a")
+size = Vector3(5, 5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdsc3"]
+render_priority = 0
+shader = ExtResource("3_kem5a")
+shader_parameter/tex = ExtResource("6_kem5a")
+shader_parameter/model_size = Vector3(5, 5, 5)
+shader_parameter/ray_steps = 128
+
+[sub_resource type="BoxMesh" id="BoxMesh_svejp"]
+material = SubResource("ShaderMaterial_gdsc3")
+size = Vector3(5, 5, 5)
+
+[node name="Hero" type="Node3D"]
+script = ExtResource("1_c6xj6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 0, 0)
+material_overlay = SubResource("ShaderMaterial_1bvp3")
+mesh = SubResource("BoxMesh_7dm0k")
+
+[node name="Cube2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49999994, 0, 0.86602527, 0, 1, 0, -0.86602527, 0, 0.49999994, -9, 0, 1.7064352)
+material_overlay = SubResource("ShaderMaterial_1bvp3")
+mesh = SubResource("BoxMesh_gxmxl")
+
+[node name="Cube3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.86602527, 0, 0.49999994, 0, 1, 0, -0.49999994, 0, 0.86602527, 9, 0, 1.7098641)
+material_overlay = SubResource("ShaderMaterial_1bvp3")
+mesh = SubResource("BoxMesh_svejp")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.7987196, 0.6017035, 0, -0.6017035, 0.7987196, 0, 7.9542, 11.484689)
+fov = 72.6

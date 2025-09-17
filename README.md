@@ -1,3 +1,5 @@
+![Godot Texture3D Visualizer](/assets/hero.png)
+
 # Godot Texture3D Visualizer
 
 `visualizer.gdshader`(visualizer.gdshader) takes a 3-dimensional texture and renders it in a specified size.
