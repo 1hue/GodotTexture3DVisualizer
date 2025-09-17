@@ -57,7 +57,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 <br />
 
 > [!TIP]
-> The texture's XYZ will align with world XYZ. To rearrange the axes, we can use GLSL's component swizzling:
+> The texture's XYZ [will align](visualizer.gdshader#L63) with world XYZ. To rearrange the axes, we can use GLSL's component swizzling:
 >
 > ```glsl
 > // Instead of the default xyz:
