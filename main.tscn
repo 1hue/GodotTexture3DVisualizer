@@ -30,7 +30,8 @@ render_priority = 0
 shader = ExtResource("1_ig7tw")
 shader_parameter/tex = ExtResource("3_h2yge")
 shader_parameter/model_size = Vector3(5, 5, 5)
-shader_parameter/ray_steps = 128
+shader_parameter/translation = 0
+shader_parameter/lod_bias = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 material = SubResource("ShaderMaterial_h2yge")
