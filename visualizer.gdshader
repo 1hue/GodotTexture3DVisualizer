@@ -67,7 +67,7 @@ void fragment() {
 			break;
 		}
 
-		vec4 sample = texture(tex, coord).xzyw;
+		vec4 sample = texture(tex, coord);
 
 		// Accummulate this texel to the fragment only if it has actual visible colour
 		if (sample.a > 0.0) {
