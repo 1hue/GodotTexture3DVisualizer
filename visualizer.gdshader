@@ -88,8 +88,8 @@ void fragment() {
 	float ray_length = length(ray_exit - model_uvw);
 
 	// Number of ray steps must go hand in hand with mipmaps. Reducing the number of steps by simply
-	// skipping over texels produces nonsensical results and is not worth it.
-	// Any scenario where performance is important should have mipmaps generated anyway.
+	// skipping over texels produces nonsensical results.
+	// Scenarios where performance is important should have mipmaps generated.
 	int ray_steps = int(ceil(countTexels(ray_direction, ray_length)));
 
 	vec4 acc = vec4(0);
