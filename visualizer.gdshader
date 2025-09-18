@@ -26,7 +26,7 @@ uniform float lod_bias : hint_range(0.0, 1.0, 0.01) = 0.0;
 
 varying vec3 model;
 
-vec3 calcRayExit(vec3 entry, vec3 direction) {
+vec3 calcRayExit(in vec3 entry, in vec3 direction) {
     // Guard each component to avoid division by zero while preserving sign
     vec3 direction_inverse = 1.0 / (direction + sign(direction) * EPS);
     vec3 t1 = (vec3(0) - entry) * direction_inverse;
@@ -41,7 +41,7 @@ vec3 calcRayExit(vec3 entry, vec3 direction) {
     return entry + direction * far;
 }
 
-float countTexels(vec3 direction, float ray_length) {
+float countTexels(in vec3 direction, in float ray_length) {
 	#if CURRENT_RENDERER != RENDERER_COMPATIBILITY
 	int current_lod = int(floor(mix(0.0, float(textureQueryLevels(tex) - 1), lod_bias)));
 	#else
