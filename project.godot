@@ -18,3 +18,8 @@ boot_splash/show_image=false
 [display]
 
 window/quality/screen_space_aa=2
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

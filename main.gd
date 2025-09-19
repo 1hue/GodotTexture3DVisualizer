@@ -49,7 +49,6 @@ func _unhandled_input(event):
 				last_mouse_pos = event.position
 
 	elif event is InputEventMouseMotion and is_dragging:
-		#is_dragging = event.button_mask & MOUSE_BUTTON_MASK_LEFT != 0
 		var delta: Vector2 = event.position - last_mouse_pos
 		last_mouse_pos = event.position
 		target_yaw -= delta.x * SENSITIVITY
