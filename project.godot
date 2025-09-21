@@ -13,7 +13,9 @@ config_version=5
 config/name="Texture3D Visualizer"
 run/main_scene="uid://bf5oxc0n30t8a"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.05882353, 0.07450981, 0.105882354, 1)
 boot_splash/show_image=false
+boot_splash/image="uid://0aoqyexcvee1"
 config/icon="uid://0aoqyexcvee1"
 
 [display]
