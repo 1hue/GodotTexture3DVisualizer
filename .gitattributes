@@ -1,1 +1,5 @@
 * text=auto eol=lfs
+
+/\.* export-ignore
+/README\.md export-ignore
+/assets/images export-ignore
