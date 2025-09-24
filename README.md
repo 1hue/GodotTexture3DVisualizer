@@ -59,7 +59,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 <br />
 
 > [!TIP]
-> The texture's orientation (XYZ) will align with world orientation (XYZ). To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`. This maps texture Y coordinate to world Z: texture XYZ -> world XZY.
+> The texture's orientation (XYZ) will align with world orientation (XYZ). To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`. This maps texture Y coordinate to world Z; texture XYZ -> world XZY.
 
 <br />
 
