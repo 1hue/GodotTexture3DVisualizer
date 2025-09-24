@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 	pitch = lerp(pitch, target_pitch, clamp(12.0 * delta, 0.0, 1.0))
 
-	#camera_pivot.rotation = Vector3(pitch, yaw, 0.0)
+	camera_pivot.rotation = Vector3(pitch, yaw, 0.0)
 
 
 func _unhandled_input(event):
