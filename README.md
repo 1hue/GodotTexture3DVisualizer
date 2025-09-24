@@ -8,7 +8,7 @@ Render and visualize 3-dimensional textures in their entirety in 3D space using 
 
 <br />
 
-The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
+The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) which raymarches through a texture based on camera angle, and projects the texture onto the surface of a cube.
 
 The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
 
