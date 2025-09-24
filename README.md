@@ -46,14 +46,17 @@ Get a hold of your texture. Perhaps load it from file. Then, simply set it as th
 
 ```gdscript
 # scene.gd
+
 @onready var node: MeshInstance3D = $Cube
 
 func set_texture(texture: Texture3D) -> void:
 	var mesh: BoxMesh = node.mesh
+
 	# Grab the material. This depends on how/where you set it.
 	var material: ShaderMaterial = mesh.material
 	#var material: ShaderMaterial = mesh.surface_get_material(0)
 	#var material: ShaderMaterial = node.get_surface_override_material(0)
+
 	material.set_shader_parameter(&"tex", texture)
 ```
 
