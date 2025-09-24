@@ -1,3 +1,4 @@
+# MIT; (c) 2025 1hue
 extends Node3D
 
 const PerlinNoise: NoiseTexture3D = preload("res://resources/perlin_noise_texture_3d.tres")
