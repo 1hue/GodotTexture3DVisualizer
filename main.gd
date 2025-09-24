@@ -1,4 +1,4 @@
-# MIT License; Copyright (c) 2025 1hue
+# Copyright (c) 2025 1hue - MIT License
 extends Node3D
 
 const PerlinNoise: NoiseTexture3D = preload("res://resources/perlin_noise_texture_3d.tres")
