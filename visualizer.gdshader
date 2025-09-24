@@ -1,4 +1,4 @@
-// MIT; (c) 2025 1hue
+// MIT License; Copyright (c) 2025 1hue
 shader_type spatial;
 render_mode unshaded, fog_disabled, shadows_disabled, blend_premul_alpha;
 
