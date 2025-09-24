@@ -1,4 +1,4 @@
-![Godot Texture3D Visualizer](/assets/hero.png)
+![Godot Texture3D Visualizer](/assets/images/hero.png)
 
 # Godot Texture3D Visualizer
 
@@ -87,13 +87,13 @@ The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 
 ### MeshInstance3D Material
 
-![Screenshot of MeshInstance3D Material](/assets/mesh_instance_3d.png)
+![Screenshot of MeshInstance3D Material](/assets/images/mesh_instance_3d.png)
 
 ---
 
 ### Shader parameters
 
-![Screenshot of Shader Parameters](/assets/shader_parameters.png)
+![Screenshot of Shader Parameters](/assets/images/shader_parameters.png)
 
 ---
 
@@ -101,4 +101,4 @@ The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 
 Top right of editor:
 
-![Screenshot of Compatibility and Forward+ rendering modes](/assets/compatibility_mode.png)
+![Screenshot of Compatibility and Forward+ rendering modes](/assets/images/compatibility_mode.png)
