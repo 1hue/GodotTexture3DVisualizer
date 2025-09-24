@@ -45,6 +45,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 Get a hold of your texture. Perhaps load it from file. Then, simply set it as the shader parameter `tex`:
 
 ```gdscript
+# scene.gd
 @onready var node: MeshInstance3D = $Cube
 
 func set_texture(texture: Texture3D) -> void:
