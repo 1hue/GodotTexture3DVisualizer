@@ -2,9 +2,11 @@
 
 # Godot Texture3D Visualizer
 
+<sup>Demo: https://1hue.github.io/demos/godot-texture3d-visualizer/</sup>
+
 Render and visualize 3-dimensional textures in their entirety in 3D space using spatial shaders.
 
-Demo: https://1hue.github.io/demos/godot-texture3d-visualizer/
+<br />
 
 The magic happens in [`visualizer.gdshader`](visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
 
@@ -59,8 +61,9 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 <br />
 
 > [!TIP]
-> The texture's orientation (XYZ) will align with world orientation (XYZ). To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`.
-> This maps texture Y axis coordinates to world Z; texture `XYZ` -> world `XZY`.
+> The texture's orientation (XYZ) will align with world orientation (XYZ).
+>
+> To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`. This maps texture Y axis coordinates to world Z; texture `XYZ` -> world `XZY`.
 
 <br />
 
