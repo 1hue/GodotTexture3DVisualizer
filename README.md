@@ -4,6 +4,8 @@
 
 Render and visualize 3-dimensional textures in their entirety in 3D space using spatial shaders.
 
+Demo: https://1hue.github.io/demos/godot-texture3d-visualizer/
+
 The magic happens in [`visualizer.gdshader`](visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
 
 The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
@@ -32,7 +34,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 6. Ensure the "Model Size" shader parameter matches the box size.
 
 > [!TIP]
-> Note that the demo project is in Compatibility mode. Switch to Forward+ to avoid quirks.
+> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
 
 <br />
 
@@ -57,14 +59,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 <br />
 
 > [!TIP]
-> The texture's XYZ will align with world XYZ. To rearrange the axes and effectively flip it 90°, we [can use](visualizer.gdshader#L63) GLSL's component swizzling:
->
-> ```glsl
-> // Instead of the default xyz:
-> vec3 coord = ...;
-> // we can xzy to make the texture's Z axis correspond to world Y:
-> vec3 coord = (...).xzy;
-> ```
+> The texture's orientation (XYZ) will align with world orientation (XYZ). To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY` -- this translates texture XYZ axes -> world XZY.
 
 <br />
 
@@ -99,9 +94,3 @@ The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
 Top right of editor:
 
 ![Screenshot of Compatibility and Forward+ rendering modes](/assets/compatibility_mode.png)
-
----
-
-### Noise texture
-
-![Screenshot of NoiseTexture3D](/assets/noise_texture_3d.png)
