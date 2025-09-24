@@ -6,7 +6,7 @@ const float EPS = 1e-9;
 
 uniform sampler3D tex : hint_default_black, repeat_disable, filter_linear_mipmap;
 
-/** The size (m³) of the cube mesh. Must be set manually as shaders cannot possibly infer this. */
+/** The size (m³) of the cube mesh. Must be set manually, cannot be inferred. */
 uniform vec3 model_size = vec3(5, 5, 5);
 
 /**
@@ -19,7 +19,7 @@ uniform int translation : hint_enum("XYZ", "XZY", "YXZ", "YZX", "ZXY", "ZYX");
  * Level of detail bias. How many texture sampling lookups (ray steps) will occur for each fragment.
  * Works hand in hand with actual texture LOD bias.
  * Lower for better quality. Higher for better performance.
- * The actual number is based on texture size and view angle.
+ * The actual number of ray marching steps is based on texture size and view angle.
  * A value of [code]0.0[/code] with a 64x64x64 texture results in 64 samples when the fragment is "looking" straight down an edge or ~111 (x1.73) samples diagonally, in case of a cube.
  * Note that this setting works [b]only if mipmaps are present[/b].
  */
