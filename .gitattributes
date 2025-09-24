@@ -1,6 +1,7 @@
 * text=auto eol=lf
 
 # Include only addons/* in the zip for Asset Library
-* export-ignore
-!/addons export-ignore
-/addons/*.uid export-ignore
+/**        export-ignore
+/addons    !export-ignore
+/addons/** !export-ignore
+/addons/**/*.uid export-ignore
