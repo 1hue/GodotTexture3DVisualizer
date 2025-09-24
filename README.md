@@ -8,7 +8,7 @@ Render and visualize 3-dimensional textures in their entirety in 3D space using 
 
 <br />
 
-The magic happens in [`visualizer.gdshader`](visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
+The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
 
 The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
 
@@ -23,20 +23,34 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 ## Instructions
 
+> [!TIP]
+> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
+
+### Shader use
+
 1. Create a `MeshInstance3D` node in your scene.
 
 2. Set the Mesh to be `BoxMesh` of size `5m`x`5m`x`5m`.
 
 3. Set the Material or Surface Material Override to a new `ShaderMaterial`.
 
-4. Set [`visualizer.gdshader`](visualizer.gdshader) as the material's shader by dragging the file or using "Load"/"Quick Load".
+4. Set [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) as the material's shader by dragging the file or using "Load"/"Quick Load".
 
 5. Set your 3D texture as the "Tex" shader parameter.
 
-6. Ensure the "Model Size" shader parameter matches the box size.
+6. Ensure the "Model Size" shader parameter matches the mesh size.
 
-> [!TIP]
-> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
+### As a plugin (optional)
+
+A basic helper node that sets up the shader is included as a Godot plugin.
+
+1. Enable the "Texture3D Visualizer" plugin via Project Settings.
+
+2. Add a `Texture3DVisualizer` node to your scene.
+
+3. Set the Texture parameter.
+
+This will simply create a BoxMesh with a Material Override and pass the texture to the shader.
 
 <br />
 
