@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://bh2lkuymxinm8"]
 
-[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://main.gd" id="1_c6xj6"]
-[ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://wireframe.gdshader" id="2_6bw2v"]
-[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://visualizer.gdshader" id="3_kem5a"]
-[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://resources/perlin_noise_texture_3d.tres" id="4_gxmxl"]
-[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://resources/cellular_noise_texture_3d.tres" id="5_6bw2v"]
-[ext_resource type="NoiseTexture3D" uid="uid://dg53ka43bxcp8" path="res://resources/simplex_noise_texture_3d.tres" id="6_kem5a"]
+[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://demo/main.gd" id="1_c6xj6"]
+[ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://addons/texture3d_visualizer/wireframe.gdshader" id="2_6bw2v"]
+[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://addons/texture3d_visualizer/visualizer.gdshader" id="3_kem5a"]
+[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://demo/resources/perlin_noise_texture_3d.tres" id="4_gxmxl"]
+[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://demo/resources/cellular_noise_texture_3d.tres" id="5_6bw2v"]
+[ext_resource type="NoiseTexture3D" uid="uid://dg53ka43bxcp8" path="res://demo/resources/simplex_noise_texture_3d.tres" id="6_kem5a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r1f3e"]
 sky_top_color = Color(0.050980393, 0.06666667, 0.09019608, 1)
@@ -88,5 +88,5 @@ mesh = SubResource("BoxMesh_svejp")
 unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.89377874, 0.44850793, 0, -0.44850793, 0.89377874, 0, 5.681, 12.551)
+transform = Transform3D(1, 0, 0, 0, 0.9237727, 0.3829414, 0, -0.3829414, 0.9237727, 0, 5.493563, 17.693092)
 fov = 72.6

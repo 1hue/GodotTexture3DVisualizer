@@ -16,8 +16,19 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.05882353, 0.07450981, 0.105882354, 1)
 boot_splash/show_image=false
 boot_splash/image="uid://0aoqyexcvee1"
-config/icon="uid://0aoqyexcvee1"
+config/icon="uid://cmwxjrremqiav"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/quality/screen_space_aa=2
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/texture3d_visualizer/plugin.cfg")
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=3
+scaling_3d/scale=2.0

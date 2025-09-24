@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bf5oxc0n30t8a"]
 
-[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://visualizer.gdshader" id="1_ig7tw"]
-[ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://wireframe.gdshader" id="2_1bvp3"]
-[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://resources/perlin_noise_texture_3d.tres" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://demo/main.gd" id="1_h2yge"]
+[ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://addons/texture3d_visualizer/visualizer.gdshader" id="1_ig7tw"]
+[ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://addons/texture3d_visualizer/wireframe.gdshader" id="2_1bvp3"]
+[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://demo/resources/perlin_noise_texture_3d.tres" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_top_color = Color(0.043137256, 0.05882353, 0.07058824, 1)
@@ -23,7 +23,7 @@ tonemap_mode = 2
 render_priority = 0
 shader = ExtResource("2_1bvp3")
 shader_parameter/wireframe = true
-shader_parameter/wireframe_color = Color(0.076499976, 0.85, 0.5534918, 1)
+shader_parameter/wireframe_color = Color(0.07, 0.85, 0.55, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
 render_priority = 0
@@ -81,7 +81,3 @@ layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1bvp3")
 text = "Cellular Noise"
-
-[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_button_pressed" binds= [0]]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_pressed" binds= [1]]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_pressed" binds= [2]]

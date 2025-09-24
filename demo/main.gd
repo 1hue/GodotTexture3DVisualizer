@@ -1,9 +1,9 @@
 # Copyright (c) 2025 1hue - MIT License
 extends Node3D
 
-const PerlinNoise: NoiseTexture3D = preload("res://resources/perlin_noise_texture_3d.tres")
-const SimplexNoise: NoiseTexture3D = preload("res://resources/simplex_noise_texture_3d.tres")
-const CellularNoise: NoiseTexture3D = preload("res://resources/cellular_noise_texture_3d.tres")
+const PerlinNoise: NoiseTexture3D = preload("res://demo/resources/perlin_noise_texture_3d.tres")
+const SimplexNoise: NoiseTexture3D = preload("res://demo/resources/simplex_noise_texture_3d.tres")
+const CellularNoise: NoiseTexture3D = preload("res://demo/resources/cellular_noise_texture_3d.tres")
 
 const SENSITIVITY: float = 0.01
 const RETURN_SPEED: float = 0.7
@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 	pitch = lerp(pitch, target_pitch, clamp(12.0 * delta, 0.0, 1.0))
 
-	camera_pivot.rotation = Vector3(pitch, yaw, 0.0)
+	#camera_pivot.rotation = Vector3(pitch, yaw, 0.0)
 
 
 func _unhandled_input(event):

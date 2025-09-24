@@ -2,7 +2,7 @@ shader_type spatial;
 render_mode unshaded, fog_disabled, shadows_disabled, wireframe;
 
 uniform bool wireframe = true;
-uniform vec4 wireframe_color: source_color = vec4(1,1,1,1);
+uniform vec4 wireframe_color: source_color = vec4(0.07, 0.85, 0.55, 1);
 
 void vertex() {
 	COLOR = wireframe_color;
