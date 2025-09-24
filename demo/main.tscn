@@ -63,21 +63,25 @@ offset_top = 24.0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="Button1" type="Button" parent="VBoxContainer"]
+[node name="Button0" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_1bvp3")
 text = "Perlin Noise"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1bvp3")
 text = "Simplex Noise"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1bvp3")
 text = "Cellular Noise"
+
+[connection signal="pressed" from="VBoxContainer/Button0" to="." method="_on_button_pressed" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_pressed" binds= [2]]

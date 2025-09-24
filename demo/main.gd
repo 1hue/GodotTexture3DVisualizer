@@ -61,6 +61,7 @@ func set_texture(texture: Texture3D) -> void:
 
 
 func _on_button_pressed(idx: int) -> void:
+	print(idx)
 	match idx:
 		1:
 			set_texture(SimplexNoise)
