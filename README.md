@@ -8,11 +8,11 @@ Render and visualize 3-dimensional textures in their entirety in 3D space using 
 
 <br />
 
-The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) which raymarches through a texture based on camera angle, and renders the 3D contents of the texture onto the surface of a cube.
+The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visualizer.gdshader) which raymarches through a texture based on camera angle, and projects the texture onto the surface of a cube.
 
 The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
 
-The texture is ingested as a `sampler3D` uniform and is sampled for each fragment a number of times using ray marching. Maximum Ray Steps are customizable.
+The texture is ingested as a `sampler3D` uniform and is sampled for each fragment a number of times using ray marching.
 
 For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
 
@@ -81,7 +81,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 > [!TIP]
 > The texture's orientation (XYZ) will align with world orientation (XYZ).
 >
-> To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`. This maps texture Y axis coordinates to world Z; texture `XYZ` -> world `XZY`.
+> To rearrange the axes and effectively flip your texture 90°, set the "Translation" parameter to `XZY`. This maps texture Z axis coordinates to world Y; texture `XYZ` -> world `XZY`.
 
 <br />
 
