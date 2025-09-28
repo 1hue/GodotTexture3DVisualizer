@@ -43,8 +43,11 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
   - Nearest or linear filtering. See pixelation or approximation.
 
-- **Rotation** - Sometimes, texture Z-depth ought to correspond to world Y. Or any other configuration.
-  <br />
+- **Rotation**
+
+  - Sometimes, texture Z-depth ought to correspond to world Y. Or any other configuration.
+
+<br />
 
 ## Instructions
 
