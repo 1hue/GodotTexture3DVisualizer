@@ -41,7 +41,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 - **Smoothed and raw pixel view**
 
-  - Nearest or linear filtering. See pixelation or approximation.
+  - Nearest or linear filtering. Approximation or pixelation.
 
 - **Rotation**
 

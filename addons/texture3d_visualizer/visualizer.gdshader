@@ -31,24 +31,24 @@ varying vec3 modelCoord;
 
 float intersectBox(vec3 rayOrigin, vec3 rayDir, vec3 size) {
 	// Avoid division by zero
-    vec3 inverseDirection = 1.0 / rayDir;
+	vec3 inverseDirection = 1.0 / rayDir;
 	// Assume origin is center, so two opposing corners are -half and +half of size
 	vec3 sizeHalf = size * 0.5;
-    // Distances to near/far planes of each slab (pair of parallel planes)
-    vec3 t0 = (-sizeHalf - rayOrigin) * inverseDirection;
-    vec3 t1 = (sizeHalf - rayOrigin) * inverseDirection;
-    vec3 tNear = min(t0, t1);
-    vec3 tFar  = max(t0, t1);
-    // The farthest entry among the three axes
-    float tEnter = max(max(tNear.x, tNear.y), tNear.z);
-    // The nearest exit among the three axes
-    float tExit  = min(min(tFar.x, tFar.y), tFar.z);
-	
+	// Distances to near/far planes of each slab (pair of parallel planes)
+	vec3 t0 = (-sizeHalf - rayOrigin) * inverseDirection;
+	vec3 t1 = (sizeHalf - rayOrigin) * inverseDirection;
+	vec3 tNear = min(t0, t1);
+	vec3 tFar = max(t0, t1);
+	// The farthest entry among the three axes
+	float tEnter = max(max(tNear.x, tNear.y), tNear.z);
+	// The nearest exit among the three axes
+	float tExit = min(min(tFar.x, tFar.y), tFar.z);
+
 	// No intersection if ray points away
-    if (tExit < 0.0 || tEnter > tExit) {
+	if (tExit < 0.0 || tEnter > tExit) {
 		return -1.0;
 	}
-    return tExit;
+	return tExit;
 }
 
 vec3 getTextureLodSize() {
@@ -60,14 +60,14 @@ vec3 getTextureLodSize() {
 		? 0
 		: int(floor(mix(0.0, float(levelCount - 1), lod_bias)));
 	#endif
-	
+
 	// Base LOD 0=128x128, 1=64x64, 2=32x32, ...
 	vec3 size = vec3(textureSize(tex, currentLod));
 	// Allow sampling at fidelity higher than existing texels
 	if (lod_bias < 0.0) {
 		size *= pow(2, abs(lod_bias));
 	}
-	
+
 	return size;
 }
 
@@ -99,19 +99,19 @@ void fragment() {
 	vec4 rayDirWorld = INV_VIEW_MATRIX * vec4(-VIEW, 0); // View space to world space
 	vec4 rayDirModel = inverse(MODEL_MATRIX) * rayDirWorld; // World space to model space
 	vec3 rayDir = normalize(rayDirModel.xyz);
-	
+
 	vec3 texSize = getTextureLodSize();
 	vec3 texCoord = modelCoord * texSize / model_size;
-	
+
 	// Length in texture coordinate space, e.g. 128 when perpendicular to the far surface of a 128x128 tex
 	float rayLength = intersectBox(texCoord, rayDir, texSize);
 	if (rayLength < 0.0) {
-        discard;
+		discard;
 	}
-	
+
 	vec3 exitTexCoord = texCoord + (rayLength * rayDir);
 	vec3 exitUVW = exitTexCoord / texSize + 0.5;
-	
+
 	// Number of ray steps must go hand in hand with mipmaps. Reducing the number of steps by simply
 	// skipping over texels produces nonsensical results.
 	// Scenarios where performance is important should have mipmaps generated.
