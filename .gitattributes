@@ -1,7 +1,5 @@
 * text=auto eol=lfs
 
-# Include only addons/* in the zip for Asset Library
-/**               export-ignore
-/addons           !export-ignore
-/addons/**        !export-ignore
-/addons/**/*.uid  export-ignore
+/\.* export-ignore
+/README\.md export-ignore
+/assets/images export-ignore
