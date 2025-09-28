@@ -19,14 +19,15 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 > [!NOTE]\
 > **No AI generated code**. No unnecessary and expensive matrix math or space reconstruction. Only clean, minimal code.
 
+> [!TIP]
+> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
+
 <br />
 
 ## Instructions
 
-> [!TIP]
-> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
-
-### Shader use
+<details>
+<summary><h3>Shader use</h3></summary>
 
 1. Create a `MeshInstance3D` node in your scene.
 
@@ -39,8 +40,11 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 5. Set your 3D texture as the "Tex" shader parameter.
 
 6. Ensure the "Model Size" shader parameter matches the mesh size.
+</details>
 
-### As a plugin (optional)
+<details>
+<summary><h3>As a plugin (optional)</h3></summary>
+<br />
 
 A basic helper node that sets up the shader is included as a Godot plugin.
 
@@ -51,6 +55,30 @@ A basic helper node that sets up the shader is included as a Godot plugin.
 3. Set the Texture parameter.
 
 This will simply create a BoxMesh with a Material Override and pass the texture to the shader.
+
+</details>
+
+<br />
+
+## Common solutions
+
+<details>
+	<summary>
+		<b>Q:</b> <i>I'm seeing curvature in my texture around the edges</i>.
+	</summary>
+	<br />
+	<b>A:</b> Ensure your texture has the same proportions as the box size. For example, a <code>128x128x128</code> texture will become warped when trying to fit into <code>128x64x128</code> space.
+	<br />
+	<br />
+</details>
+
+<details>
+	<summary>
+		<b>Q:</b> <i>The texture is blurred/smoothed. I want to see the actual pixels with clear edges.</i>
+	</summary>
+	<br />
+	<b>A:</b> Swap <code>filter_linear_mipmap</code> for <code>filter_nearest_mipmap</code> in [`visualizer.gdshader`]](/addons/texture3d_visualizer/visualizer.gdshader) to remove any texel approximation/smoothing.
+</details>
 
 <br />
 
