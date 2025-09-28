@@ -130,7 +130,7 @@ void fragment() {
 		vec4 sample = texture(tex, coord, lod_bias);
 
 		// Accummulate this texel to the fragment only if it has actual visible colour
-		if (sample.r > 0.0) {
+		if (sample.a > 0.0) {
 			acc.rgb += sample.rgb * sample.a;
 			acc.rgb = clamp(acc.rgb, 0, 1);
 			acc.a = 1.0 - (1.0 - acc.a) * (1.0 - sample.a); // 0.75 for two 0.5 alphas
