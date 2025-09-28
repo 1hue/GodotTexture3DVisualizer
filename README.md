@@ -12,7 +12,7 @@ The magic happens in [`visualizer.gdshader`](/addons/texture3d_visualizer/visual
 
 The texture could be loaded from file or it could be a [`Texture3DRD`](https://docs.godotengine.org/en/stable/classes/class_texture3drd.html) created on the GPU, but this is up to you - it _must be provided_ to the shader as a parameter.
 
-The texture is ingested as a `sampler3D` uniform and is sampled for each fragment a number of times using ray marching.
+The texture is ingested as a `sampler3D` uniform and is sampled for each fragment a number of times using raymarching.
 
 For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
 
@@ -23,6 +23,28 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 > Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
 
 <br />
+
+## Features
+
+- **Irregular cuboid sizes**
+
+  - Not just cubes; `1m×2m×3m` is acceptable.
+
+- **LOD support**
+
+  - When mipmaps are present, raymarching and sampling the texture at the specified mipmap level is fully supported.
+  - Sampling at fidelities _higher_ than the texture size, e.g. `128` raymarching steps for a `64px` texture.
+
+- **Proper raymarching - automatic calculation of view angle**
+
+  - For a texture of `64px³`, the vast majority of fragments will raymarch less or more than `64` steps.
+
+- **Smoothed and raw pixel view**
+
+  - Nearest or linear filtering. See pixelation or approximation.
+
+- **Rotation** - Sometimes, texture Z-depth ought to correspond to world Y. Or any other configuration.
+  <br />
 
 ## Instructions
 
@@ -67,7 +89,7 @@ This will simply create a BoxMesh with a Material Override and pass the texture 
 </summary>
 <br />
 
-**A:** Ensure your texture has the same proportions as the box size. For example, a `128x128x128` texture will become warped when trying to fit into `128x64x128` space.
+**A:** Ensure your texture has the same proportions as the box size. For example, a `128x128x128` texture will become warped when trying to fit into a `128x64x128` space.
 
 <br />
 </details>
