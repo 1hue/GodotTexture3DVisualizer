@@ -60,12 +60,12 @@ environment = SubResource("Environment_h2yge")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
-visible = false
 material_overlay = SubResource("ShaderMaterial_1bvp3")
 mesh = SubResource("BoxMesh_7dm0k")
 
 [node name="Cuboid" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
+visible = false
 material_overlay = SubResource("ShaderMaterial_1bvp3")
 mesh = SubResource("BoxMesh_7a6vi")
 
