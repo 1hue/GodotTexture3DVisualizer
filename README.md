@@ -41,10 +41,13 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
 
 - **Smoothed and raw pixel view**
 
-  - Nearest or linear filtering. See pixelation or approximation.
+  - Nearest or linear filtering. Approximation or pixelation.
 
-- **Rotation** - Sometimes, texture Z-depth ought to correspond to world Y. Or any other configuration.
-  <br />
+- **Rotation**
+
+  - Sometimes, texture Z-depth ought to correspond to world Y. Or any other configuration.
+
+<br />
 
 ## Instructions
 
@@ -89,7 +92,7 @@ This will simply create a BoxMesh with a Material Override and pass the texture 
 </summary>
 <br />
 
-**A:** Ensure your texture has the same proportions as the box size. For example, a `128x128x128` texture will become warped when trying to fit into a `128x64x128` space.
+**A:** Ensure that your texture has the same proportions as the box size. For example, a `128x128x128` texture will become warped when trying to fit into a `128x64x128` space.
 
 <br />
 </details>
