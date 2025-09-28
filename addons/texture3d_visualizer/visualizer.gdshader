@@ -100,7 +100,7 @@ void fragment() {
 	vec4 rayDirModel = inverse(MODEL_MATRIX) * rayDirWorld; // World space to model space
 	vec3 rayDir = normalize(rayDirModel.xyz);
 
-	vec3 texSize = getTextureLodSize();
+	vec3 texSize = swizzle(getTextureLodSize());
 	vec3 texCoord = modelCoord * texSize / model_size;
 
 	// Length in texture coordinate space, e.g. 128 when perpendicular to the far surface of a 128x128 tex
