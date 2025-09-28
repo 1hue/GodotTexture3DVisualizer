@@ -13,6 +13,7 @@ domain_warp_enabled = true
 
 [resource]
 width = 128
+height = 128
 depth = 128
 noise = SubResource("FastNoiseLite_tlfx0")
 color_ramp = SubResource("Gradient_n4w22")
