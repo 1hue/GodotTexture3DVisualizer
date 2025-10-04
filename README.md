@@ -17,10 +17,7 @@ The texture is ingested as a `sampler3D` uniform and is sampled for each fragmen
 For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine.org/en/stable/classes/class_noisetexture3d.html) is used.
 
 > [!NOTE]\
-> **No AI generated code**. No unnecessary and expensive matrix math or space reconstruction. Only clean, minimal code.
-
-> [!TIP]
-> Note that the demo project may be in Compatibility mode. Switch to Forward+ to avoid quirks.
+> No unnecessary and expensive matrix math or space reconstruction. Only clean, minimal code.
 
 <br />
 
@@ -35,7 +32,7 @@ For the purposes of demonstration, a [`NoiseTexture3D`](https://docs.godotengine
   - When mipmaps are present, raymarching and sampling the texture at the specified mipmap level is fully supported.
   - Sampling at fidelities _higher_ than the texture size, e.g. `128` raymarching steps for a `64px` texture.
 
-- **Proper raymarching - automatic calculation of view angle**
+- **Dynamic raymarching**
 
   - For a texture of `64px³`, the vast majority of fragments will raymarch less or more than `64` steps.
 
@@ -149,7 +146,7 @@ Tested with:
 - Godot v4.5
 - Godot v4.4
 
-The wireframe (cube outline) used for the demo works in Mobile/Forward+ only.
+The wireframe/cube outline used for the demo works in Mobile/Forward+ only.
 
 <br />
 
