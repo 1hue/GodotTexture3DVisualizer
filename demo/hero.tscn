@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bh2lkuymxinm8"]
+[gd_scene load_steps=18 format=3 uid="uid://bh2lkuymxinm8"]
 
 [ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://demo/main.gd" id="1_c6xj6"]
 [ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://addons/texture3d_visualizer/wireframe.gdshader" id="2_6bw2v"]
@@ -63,6 +63,9 @@ shader_parameter/lod_bias = 0.0
 material = SubResource("ShaderMaterial_gdsc3")
 size = Vector3(5, 5, 5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_0ry3p"]
+size = Vector3(20, 10, 0.5)
+
 [node name="Hero" type="Node3D"]
 script = ExtResource("1_c6xj6")
 
@@ -90,3 +93,7 @@ unique_name_in_owner = true
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.9237727, 0.3829414, 0, -0.3829414, 0.9237727, 0, 5.493563, 17.693092)
 fov = 72.6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.314928)
+mesh = SubResource("BoxMesh_0ry3p")
