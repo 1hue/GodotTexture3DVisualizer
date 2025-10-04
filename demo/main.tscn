@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cr3hhwplxc130" path="res://demo/main.gd" id="1_h2yge"]
 [ext_resource type="Shader" uid="uid://bh4h4728r6bbu" path="res://addons/texture3d_visualizer/visualizer.gdshader" id="1_ig7tw"]
 [ext_resource type="Shader" uid="uid://5pro0ijy13j4" path="res://addons/texture3d_visualizer/wireframe.gdshader" id="2_1bvp3"]
-[ext_resource type="NoiseTexture3D" uid="uid://cd77sbvhmb5li" path="res://demo/resources/perlin_noise_texture_3d.tres" id="3_h2yge"]
+[ext_resource type="NoiseTexture3D" uid="uid://ck8aoq1w5jbm5" path="res://demo/resources/cellular_noise_texture_3d.tres" id="4_wrxtx"]
 [ext_resource type="NoiseTexture3D" uid="uid://bgl5dseg6btl4" path="res://demo/resources/cuboid_cellular_noise_texture_3d.tres" id="5_wrxtx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
@@ -29,7 +29,7 @@ shader_parameter/wireframe_color = Color(0.07, 0.85, 0.55, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
 render_priority = 0
 shader = ExtResource("1_ig7tw")
-shader_parameter/tex = ExtResource("3_h2yge")
+shader_parameter/tex = ExtResource("4_wrxtx")
 shader_parameter/model_size = Vector3(5, 5, 5)
 shader_parameter/translation = 0
 shader_parameter/lod_bias = 0.0
