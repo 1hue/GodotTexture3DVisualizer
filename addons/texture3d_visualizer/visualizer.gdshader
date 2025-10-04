@@ -116,27 +116,25 @@ void fragment() {
 	// skipping over texels produces nonsensical results.
 	// Scenarios where performance is important should have mipmaps generated.
 	int raySteps = int(ceil(rayLength));
-
 	vec4 acc = vec4(0);
+	float transparency = 1.0;
+	
 	for (int i = 0; i < raySteps; i++) {
 		float rayProgress = float(i) / float(raySteps - 1);
 		vec3 coord = swizzle(mix(UVW, exitUVW, rayProgress));
 
-		if (acc.a >= 1.0) {
+		vec4 sample = texture(tex, coord, lod_bias);
+
+		acc.rgb += sample.rgb * sample.a * transparency;
+		acc.a += sample.a * transparency;
+		transparency *= 1.0 - sample.a;
+		
+		if (transparency <= 1e-5) {
 			// Stop raymarching if fragment has accummulated full opacity
 			break;
 		}
-
-		vec4 sample = texture(tex, coord, lod_bias);
-
-		// Accummulate this texel to the fragment only if it has actual visible colour
-		if (sample.a > 0.0) {
-			acc.rgb += sample.rgb * sample.a;
-			acc.rgb = clamp(acc.rgb, 0, 1);
-			acc.a = 1.0 - (1.0 - acc.a) * (1.0 - sample.a); // 0.75 for two 0.5 alphas
-		}
 	}
-
+		
 	ALBEDO = acc.rgb;
 	ALPHA = acc.a;
 }
