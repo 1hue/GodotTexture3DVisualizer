@@ -88,6 +88,12 @@ vec3 swizzle(in vec3 coord) {
 	}
 }
 
+void accummulate(in vec4 sample, inout vec4 acc, inout float transparency) {
+	acc.rgb += sample.rgb * sample.a * transparency;
+	acc.a += sample.a * transparency;
+	transparency *= 1.0 - sample.a;
+}
+
 void vertex() {
 	modelCoord = VERTEX;
 }
@@ -125,9 +131,7 @@ void fragment() {
 
 		vec4 sample = texture(tex, coord, lod_bias);
 
-		acc.rgb += sample.rgb * sample.a * transparency;
-		acc.a += sample.a * transparency;
-		transparency *= 1.0 - sample.a;
+		accummulate(sample, acc, transparency);
 		
 		if (transparency <= 1e-5) {
 			// Stop raymarching if fragment has accummulated full opacity
