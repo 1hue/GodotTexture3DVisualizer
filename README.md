@@ -142,7 +142,7 @@ The texture is then, effectively, transferred from the CPU to the GPU and availa
 Tested with:
 
 - Vulkan API
-- Compatibility mode
+- Compatibility/WebGL mode
 - Godot v4.5
 - Godot v4.4
 
