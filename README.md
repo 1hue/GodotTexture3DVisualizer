@@ -2,7 +2,7 @@
 
 # Godot Texture3D Visualizer
 
-<sup>Demo: https://1hue.github.io/demos/godot-texture3d-visualizer/</sup>
+<sup>Demo: https://1hue.dev/demos/godot-texture3d-visualizer/</sup>
 
 Render and visualize 3-dimensional textures in their entirety in 3D space using spatial shaders.
 
